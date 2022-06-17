@@ -2,7 +2,7 @@
   "name": "exqure",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://niyicodes.github.io/Exqure16",
+  "homepage": "https://niyicodes.github.io/Exqure",
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
