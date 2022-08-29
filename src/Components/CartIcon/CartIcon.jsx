@@ -1,4 +1,6 @@
 import React from 'react'
+import {createStructuredSelector} from 'reselect'
+
 import {ReactComponent as ShoppingIcon} from '../../assets/cart.svg'
 import './CartIcon.scss'
 import {toggleCartHidden} from '../../Redux/Cart/cartActions'
@@ -19,15 +21,15 @@ const mapDispatchToProps = dispatch => ({
 })
 
 // const mapStateToProps = ({cart:{cartItems}}) => {
-//  return{ //this code below makes the cartIcon display the quanntty withing the cart
+//  return{ //this code below makes the cartIcon display the quantity withing the cart
 //   itemCount: cartItems.reduce(
 //    (accumulatedQuantity, cartItem) => accumulatedQuantity + cartItem.quantity, 0
 //   )
 //  }
 // }
 
-const mapStateToProps = state => ({
- itemCount: selectCartItemsCount(state)
+const mapStateToProps = createStructuredSelector({
+ itemCount: selectCartItemsCount
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);
