@@ -7,10 +7,12 @@ import Header from './Components/Header/Header';
 import Homepage from './Page/homepage/Homepage';
 import ShopPage from './Page/ShopPage/Shop';
 import SignInSingUP from './Page/SignInUp/SignInSignUp';
+
 import {auth} from './Firebase/Firebase'
 import { connect } from 'react-redux';
 import {setCurrentUser} from './Redux/User/userActions';
 import { selectCurrentUser } from './Redux/User/userSelector';
+import CheckoutPage from './Page/CheckoutPage/CheckoutPage';
 
 
 
@@ -49,6 +51,7 @@ class App extends React.Component{
           <Route exact path='/' element={<Homepage />} />
           {/* <Route  path='/hats' element={<Homepage />}/> */}
           <Route  path='/shop' element={<ShopPage />}/>
+          <Route exact path='/checkout' element={<CheckoutPage />}/>
           <Route exact path='/signin' element={<SignInSingUP />}/>
         </Routes>
       </div>
@@ -56,6 +59,7 @@ class App extends React.Component{
   }
   
 }
+
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
 })
